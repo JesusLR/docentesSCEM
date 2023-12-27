@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Secundaria\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Conceptoscursoestado;
-use App\Http\Models\Secundaria\Secundaria_inscritos;
-use App\Http\Models\Ubicacion;
+use App\Models\Conceptoscursoestado;
+use App\Models\Secundaria\Secundaria_inscritos;
+use App\Models\Ubicacion;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use PDF;

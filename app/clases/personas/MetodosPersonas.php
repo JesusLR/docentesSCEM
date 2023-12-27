@@ -5,10 +5,10 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
-use App\Http\Models\Alumno;
-use App\Http\Models\Empleado;
-use App\Http\Models\Primaria\Primaria_empleado;
-use App\Http\Models\Secundaria\Secundaria_empleados;
+use App\Models\Alumno;
+use App\Models\Empleado;
+use App\Models\Primaria\Primaria_empleado;
+use App\Models\Secundaria\Secundaria_empleados;
 
 class MetodosPersonas
 {

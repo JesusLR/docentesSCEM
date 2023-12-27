@@ -14,15 +14,15 @@ use Carbon\Carbon;
 
 
 
-use App\Http\Models\Curso;
-use App\Http\Models\Alumno;
-use App\Http\Models\Cuota;
-use App\Http\Models\ConceptoPago;
-use App\Http\Models\Pago;
-use App\Http\Models\Ficha;
-use App\Http\Models\Periodo;
-use App\Http\Models\Referencia;
-use App\Http\Models\InscritosEduCont;
+use App\Models\Curso;
+use App\Models\Alumno;
+use App\Models\Cuota;
+use App\Models\ConceptoPago;
+use App\Models\Pago;
+use App\Models\Ficha;
+use App\Models\Periodo;
+use App\Models\Referencia;
+use App\Models\InscritosEduCont;
 use App\Http\Helpers\GenerarReferencia;
 use App\Http\Helpers\Utils;
 use App\clases\SCEM\Mailer as ScemMailer;
@@ -383,7 +383,7 @@ class PrimariaAplicarPagosController extends Controller
   /**
   * @param string $correo
   * @param string $nombre_destinatario
-  * @param App\Http\Models\Pago $pago
+  * @param App\Models\Pago $pago
   * @param boolean $cambioFormaAplico
   */
   public function enviarNotificacion($correo, $nombre_destinatario, $pago, $cambioFormaAplico)
@@ -417,7 +417,7 @@ class PrimariaAplicarPagosController extends Controller
   }
 
   /**
-  * @param App\Http\Models\Pago $pago
+  * @param App\Models\Pago $pago
   * @param boolean $cambioFormaAplico
   */
     private function mensaje_modificacion_pago($pago, $cambioFormaAplico) {

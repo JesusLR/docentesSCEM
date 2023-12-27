@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Secundaria;
 use Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Pais;
-use App\Http\Models\Primaria\Primaria_alumnos_entrevista;
+use App\Models\Pais;
+use App\Models\Primaria\Primaria_alumnos_entrevista;
 use Illuminate\Database\QueryException;
 
 class SecundariaAlumnosEntrevistaInicialController extends Controller

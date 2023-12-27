@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Collection;
-use App\Http\Models\Departamento;
+use App\Models\Departamento;
 
 class MetodosDepartamentos
 {
@@ -59,7 +59,7 @@ class MetodosDepartamentos
     }
 
     /**
-    * @param App\Http\Models\Departamento
+    * @param App\Models\Departamento
     */
     public static function describirNivel($departamento): string
     {

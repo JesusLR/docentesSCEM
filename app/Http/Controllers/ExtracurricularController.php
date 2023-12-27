@@ -15,18 +15,18 @@ use URL;
 use Validator;
 use Debugbar;
 
-use App\Http\Models\Grupo;
-use App\Http\Models\Curso;
-use App\Http\Models\Cgt;
-use App\Http\Models\Aula;
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Empleado;
-use App\Http\Models\Horario;
-use App\Http\Models\Periodo;
-use App\Http\Models\Programa;
-use App\Http\Models\Plan;
-use App\Http\Models\Materia;
-use App\Http\Models\Optativa;
+use App\Models\Grupo;
+use App\Models\Curso;
+use App\Models\Cgt;
+use App\Models\Aula;
+use App\Models\Ubicacion;
+use App\Models\Empleado;
+use App\Models\Horario;
+use App\Models\Periodo;
+use App\Models\Programa;
+use App\Models\Plan;
+use App\Models\Materia;
+use App\Models\Optativa;
 
 class ExtracurricularController extends Controller
 {

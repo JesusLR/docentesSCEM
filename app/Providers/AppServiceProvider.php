@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use App\Http\Models\Portal_configuracion;
+use App\Models\Portal_configuracion;
 use Illuminate\Support\Facades\View;
 
 class AppServiceProvider extends ServiceProvider

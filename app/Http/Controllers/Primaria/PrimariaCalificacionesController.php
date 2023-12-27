@@ -16,28 +16,28 @@ use Debugbar;
 use PDF;
 
 
-use App\Http\Models\Grupo;
-use App\Http\Models\Curso;
-use App\Http\Models\Cgt;
-use App\Http\Models\Aula;
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Empleado;
-use App\Http\Models\Periodo;
-use App\Http\Models\Programa;
-use App\Http\Models\Plan;
-use App\Http\Models\Escuela;
-use App\Http\Models\Persona;
+use App\Models\Grupo;
+use App\Models\Curso;
+use App\Models\Cgt;
+use App\Models\Aula;
+use App\Models\Ubicacion;
+use App\Models\Empleado;
+use App\Models\Periodo;
+use App\Models\Programa;
+use App\Models\Plan;
+use App\Models\Escuela;
+use App\Models\Persona;
 
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Departamento;
-use App\Http\Models\Primaria\Primaria_calificacione;
-use App\Http\Models\Primaria\Primaria_falta;
-use App\Http\Models\Primaria\Primaria_grupo;
-use App\Http\Models\Primaria\Primaria_grupos_evidencias;
-use App\Http\Models\Primaria\Primaria_inscrito;
-use App\Http\Models\Primaria\Primaria_mes_evaluaciones;
+use App\Models\Departamento;
+use App\Models\Primaria\Primaria_calificacione;
+use App\Models\Primaria\Primaria_falta;
+use App\Models\Primaria\Primaria_grupo;
+use App\Models\Primaria\Primaria_grupos_evidencias;
+use App\Models\Primaria\Primaria_inscrito;
+use App\Models\Primaria\Primaria_mes_evaluaciones;
 use Illuminate\Support\Facades\Log;
 
 class PrimariaCalificacionesController extends Controller

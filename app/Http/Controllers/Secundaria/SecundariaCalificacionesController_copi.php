@@ -16,26 +16,26 @@ use Debugbar;
 use PDF;
 
 
-use App\Http\Models\Grupo;
-use App\Http\Models\Curso;
-use App\Http\Models\Cgt;
-use App\Http\Models\Aula;
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Empleado;
-use App\Http\Models\Periodo;
-use App\Http\Models\Programa;
-use App\Http\Models\Plan;
-use App\Http\Models\Escuela;
-use App\Http\Models\Persona;
+use App\Models\Grupo;
+use App\Models\Curso;
+use App\Models\Cgt;
+use App\Models\Aula;
+use App\Models\Ubicacion;
+use App\Models\Empleado;
+use App\Models\Periodo;
+use App\Models\Programa;
+use App\Models\Plan;
+use App\Models\Escuela;
+use App\Models\Persona;
 
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Secundaria\Secundaria_calificaciones;
-use App\Http\Models\Secundaria\Secundaria_empleados;
-use App\Http\Models\Secundaria\Secundaria_grupos;
-use App\Http\Models\Secundaria\Secundaria_inscritos;
-use App\Http\Models\Secundaria\Secundaria_mes_evaluaciones;
+use App\Models\Secundaria\Secundaria_calificaciones;
+use App\Models\Secundaria\Secundaria_empleados;
+use App\Models\Secundaria\Secundaria_grupos;
+use App\Models\Secundaria\Secundaria_inscritos;
+use App\Models\Secundaria\Secundaria_mes_evaluaciones;
 
 class SecundariaCalificacionesController extends Controller
 {

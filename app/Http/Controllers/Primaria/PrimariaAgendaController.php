@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Primaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_agenda;
-use App\Http\Models\Primaria\Primaria_agenda_colores;
-use App\Http\Models\Primaria\Primaria_empleado;
+use App\Models\Primaria\Primaria_agenda;
+use App\Models\Primaria\Primaria_agenda_colores;
+use App\Models\Primaria\Primaria_empleado;
 
 class PrimariaAgendaController extends Controller
 {

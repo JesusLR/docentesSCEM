@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Secundaria;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Utils;
-use App\Http\Models\Secundaria\Secundaria_empleados;
+use App\Models\Secundaria\Secundaria_empleados;
 use App\Models\User_docente;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;

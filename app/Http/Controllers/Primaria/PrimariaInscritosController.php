@@ -14,14 +14,14 @@ use URL;
 use Validator;
 use Debugbar;
 
-use App\Http\Models\Grupo;
-use App\Http\Models\Curso;
+use App\Models\Grupo;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Departamento;
-use App\Http\Models\Primaria\Primaria_asistencia;
-use App\Http\Models\Primaria\Primaria_grupo;
-use App\Http\Models\Primaria\Primaria_inscrito;
+use App\Models\Departamento;
+use App\Models\Primaria\Primaria_asistencia;
+use App\Models\Primaria\Primaria_grupo;
+use App\Models\Primaria\Primaria_inscrito;
 
 class PrimariaInscritosController extends Controller
 {

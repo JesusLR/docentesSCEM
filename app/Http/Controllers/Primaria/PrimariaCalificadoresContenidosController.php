@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Primaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_contenidos_calificadores;
+use App\Models\Primaria\Primaria_contenidos_calificadores;
 use Illuminate\Database\QueryException;
 use Yajra\DataTables\Facades\DataTables;
 use Validator;

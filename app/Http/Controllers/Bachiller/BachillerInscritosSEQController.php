@@ -13,11 +13,11 @@ use Auth;
 use URL;
 use Validator;
 use Debugbar;
-use App\Http\Models\Curso;
+use App\Models\Curso;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Bachiller\Bachiller_cch_asistencia;
-use App\Http\Models\Bachiller\Bachiller_cch_grupos;
+use App\Models\Bachiller\Bachiller_cch_asistencia;
+use App\Models\Bachiller\Bachiller_cch_grupos;
 
 class BachillerInscritosSEQController extends Controller
 {

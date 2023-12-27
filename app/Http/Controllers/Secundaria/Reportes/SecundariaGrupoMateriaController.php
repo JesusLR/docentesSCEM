@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Secundaria\Reportes;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\Utils;
-use App\Http\Models\Secundaria\Secundaria_empleados;
-use App\Http\Models\Secundaria\Secundaria_grupos;
-use App\Http\Models\Secundaria\Secundaria_inscritos;
+use App\Models\Secundaria\Secundaria_empleados;
+use App\Models\Secundaria\Secundaria_grupos;
+use App\Models\Secundaria\Secundaria_inscritos;
 use Illuminate\Http\Request;
 
-use App\Http\Models\Ubicacion;
+use App\Models\Ubicacion;
 
 use Carbon\Carbon;
 use PDF;

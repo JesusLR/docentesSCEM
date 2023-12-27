@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Primaria\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Curso;
-use App\Http\Models\Pago;
-use App\Http\Models\Ubicacion;
+use App\Models\Curso;
+use App\Models\Pago;
+use App\Models\Ubicacion;
 use App\clases\cgts\MetodosCgt;
-use App\Http\Models\Departamento;
+use App\Models\Departamento;
 use Codedge\Fpdf\Fpdf\Fpdf;
 use Carbon\Carbon;
 use RealRashid\SweetAlert\Facades\Alert;

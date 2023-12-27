@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Primaria;
 use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Alumno;
-use App\Http\Models\Pais;
-use App\Http\Models\Primaria\Primaria_alumnos_historia_clinica;
-use App\Http\Models\Primaria\Primaria_alumnos_historia_clinica_escolares;
-use App\Http\Models\Primaria\Primaria_alumnos_historia_clinica_familiares;
+use App\Models\Alumno;
+use App\Models\Pais;
+use App\Models\Primaria\Primaria_alumnos_historia_clinica;
+use App\Models\Primaria\Primaria_alumnos_historia_clinica_escolares;
+use App\Models\Primaria\Primaria_alumnos_historia_clinica_familiares;
 use App\Models\User;
 use Yajra\DataTables\Facades\DataTables;
 

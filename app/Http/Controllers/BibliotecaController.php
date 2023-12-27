@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-use App\Http\Models\Pago;
-use App\Http\Models\Alumno;
+use App\Models\Pago;
+use App\Models\Alumno;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 // use Yajra\DataTables\Facades\DataTables;
-use App\Http\Models\Portal_configuracion;
+use App\Models\Portal_configuracion;
 
 class BibliotecaController extends Controller
 {

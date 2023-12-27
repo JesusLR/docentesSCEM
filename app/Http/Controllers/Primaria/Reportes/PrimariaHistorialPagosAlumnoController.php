@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Primaria\Reportes;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Http\Models\Alumno;
-use App\Http\Models\Pago;
+use App\Models\Alumno;
+use App\Models\Pago;
 
 use PDF;
 use Carbon\Carbon;

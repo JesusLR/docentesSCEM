@@ -18,8 +18,8 @@
 
 @php
     
-use App\Http\Models\Departamento;
-use App\Http\Models\Bachiller\Bachiller_calendarioexamen;
+use App\Models\Departamento;
+use App\Models\Bachiller\Bachiller_calendarioexamen;
 use App\Http\Helpers\Utils;
 
 

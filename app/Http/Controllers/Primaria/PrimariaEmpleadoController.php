@@ -8,19 +8,19 @@ use Debugbar;
 use Validator;
 use Carbon\Carbon;
 use App\Models\User;
-use App\Http\Models\Pais;
+use App\Models\Pais;
 use App\Http\Helpers\Utils;
-use App\Http\Models\Estado;
+use App\Models\Estado;
 use Illuminate\Support\Str;
-use App\Http\Models\Persona;
+use App\Models\Persona;
 use App\Models\User_docente;
-use App\Http\Models\Grupo;
-use App\Http\Models\Alumno;
+use App\Models\Grupo;
+use App\Models\Alumno;
 
 use Illuminate\Http\Request;
-use App\Http\Models\Empleado;
-use App\Http\Models\Municipio;
-use App\Http\Models\Ubicacion;
+use App\Models\Empleado;
+use App\Models\Municipio;
+use App\Models\Ubicacion;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\QueryException;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -28,8 +28,8 @@ use Yajra\DataTables\Facades\DataTables;
 
 use App\clases\personas\MetodosPersonas;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_empleado;
-use App\Http\Models\Puesto;
+use App\Models\Primaria\Primaria_empleado;
+use App\Models\Puesto;
 use Exception;
 
 class PrimariaEmpleadoController extends Controller
