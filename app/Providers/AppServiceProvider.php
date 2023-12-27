@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Pagination\Paginator;
 use App\Models\Portal_configuracion;
 use Illuminate\Support\Facades\View;
 
@@ -18,6 +19,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Schema::defaultStringLength(191);
         \Debugbar::disable();
+        Paginator::useBootstrap();
 
         $configs = Portal_configuracion::Where('pcPortal', 'D')->get();
 
