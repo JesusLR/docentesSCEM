@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Secundaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Secundaria\Secundaria_resumenacademico;
+use App\Models\Secundaria\Secundaria_resumenacademico;
 use Yajra\DataTables\Facades\DataTables;
 
 class SecundariaResumenAcademico extends Controller

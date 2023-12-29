@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Bachiller\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Bachiller\Bachiller_calendarioexamen;
-use App\Http\Models\Bachiller\Bachiller_inscritos_evidencias;
+use App\Models\Bachiller\Bachiller_calendarioexamen;
+use App\Models\Bachiller\Bachiller_inscritos_evidencias;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use PDF;

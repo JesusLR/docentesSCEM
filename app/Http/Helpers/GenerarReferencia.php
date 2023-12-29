@@ -2,9 +2,9 @@
 
 namespace App\Http\Helpers;
 
-use App\Http\Models\Curso;
-use App\Http\Models\Alumno;
-use App\Http\Models\Cuota;
+use App\Models\Curso;
+use App\Models\Alumno;
+use App\Models\Cuota;
 
 
 class GenerarReferencia{

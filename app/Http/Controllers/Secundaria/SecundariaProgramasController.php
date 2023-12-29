@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Secundaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Programa;
-use App\Http\Models\Secundaria\Secundaria_empleados;
-use App\Http\Models\Ubicacion;
+use App\Models\Programa;
+use App\Models\Secundaria\Secundaria_empleados;
+use App\Models\Ubicacion;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Yajra\DataTables\Facades\DataTables;

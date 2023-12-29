@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Bachiller\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Bachiller\Bachiller_inscritos_evidencias;
+use App\Models\Bachiller\Bachiller_inscritos_evidencias;
 use Illuminate\Support\Facades\DB;
 use PDF;
 

@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Secundaria\Reportes;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Models\Curso;
-use App\Http\Models\Alumno;
-use App\Http\Models\Periodo;
-use App\Http\Models\Cgt;
-use App\Http\Models\Plan;
-use App\Http\Models\Programa;
-use App\Http\Models\Escuela;
-use App\Http\Models\Departamento;
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Cuota;
+use App\Models\Curso;
+use App\Models\Alumno;
+use App\Models\Periodo;
+use App\Models\Cgt;
+use App\Models\Plan;
+use App\Models\Programa;
+use App\Models\Escuela;
+use App\Models\Departamento;
+use App\Models\Ubicacion;
+use App\Models\Cuota;
 use Auth;
 
 use Carbon\Carbon;

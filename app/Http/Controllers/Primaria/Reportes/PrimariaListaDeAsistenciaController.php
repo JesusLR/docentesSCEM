@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Primaria\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_asistencia;
-use App\Http\Models\Primaria\Primaria_inscrito;
-use App\Http\Models\Ubicacion;
+use App\Models\Primaria\Primaria_asistencia;
+use App\Models\Primaria\Primaria_inscrito;
+use App\Models\Ubicacion;
 use Carbon\Carbon;
 use DateTime;
 use Illuminate\Support\Facades\DB;

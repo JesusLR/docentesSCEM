@@ -4,11 +4,11 @@ namespace App\Http\Controllers\Bachiller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Bachiller\Bachiller_evidencias;
-use App\Http\Models\Bachiller\Bachiller_grupos;
-use App\Http\Models\Bachiller\Bachiller_inscritos_evidencias;
-use App\Http\Models\Bachiller\Bachiller_materias;
-use App\Http\Models\Ubicacion;
+use App\Models\Bachiller\Bachiller_evidencias;
+use App\Models\Bachiller\Bachiller_grupos;
+use App\Models\Bachiller\Bachiller_inscritos_evidencias;
+use App\Models\Bachiller\Bachiller_materias;
+use App\Models\Ubicacion;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
 use Yajra\DataTables\Facades\DataTables;

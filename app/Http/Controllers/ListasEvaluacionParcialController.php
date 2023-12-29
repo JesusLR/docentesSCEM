@@ -5,13 +5,13 @@ namespace App\Http\Controllers;
 use DB;
 use PDF;
 use Carbon\Carbon;
-use App\Http\Models\Grupo;
+use App\Models\Grupo;
 
 use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
-use App\Http\Models\Inscrito;
+use App\Models\Inscrito;
 use App\Http\Controllers\Controller;
 
 class ListasEvaluacionParcialController extends Controller

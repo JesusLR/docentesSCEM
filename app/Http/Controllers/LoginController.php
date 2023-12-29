@@ -16,8 +16,8 @@ use Validator;
 use Debugbar;
 
 use Illuminate\Support\Facades\Session;
-use App\Http\Models\Empleado;
-use App\Http\Models\Portal_configuracion;
+use App\Models\Empleado;
+use App\Models\Portal_configuracion;
 
 class LoginController extends Controller
 {

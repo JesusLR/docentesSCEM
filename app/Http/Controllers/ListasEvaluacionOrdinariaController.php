@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Models\Grupo;
-use App\Http\Models\Inscrito;
+use App\Models\Grupo;
+use App\Models\Inscrito;
 
 use Carbon\Carbon;
 

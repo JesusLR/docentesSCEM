@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Primaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Departamento;
-use App\Http\Models\Primaria\Primaria_empleado;
-use App\Http\Models\Primaria\Primaria_grupo;
-use App\Http\Models\Ubicacion;
+use App\Models\Departamento;
+use App\Models\Primaria\Primaria_empleado;
+use App\Models\Primaria\Primaria_grupo;
+use App\Models\Ubicacion;
 use Illuminate\Support\Facades\DB;
 
 class PrimariaAsingarDocenteCGTController extends Controller

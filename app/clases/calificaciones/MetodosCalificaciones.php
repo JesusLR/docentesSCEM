@@ -4,8 +4,8 @@ namespace App\clases\calificaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-use App\Http\Models\Calificacion;
-use App\Http\Models\CalificacionHistorial;
+use App\Models\Calificacion;
+use App\Models\CalificacionHistorial;
 use Carbon\Carbon;
 
 class MetodosCalificaciones
@@ -28,8 +28,8 @@ class MetodosCalificaciones
 	}
 
 	/**
-	* @param App\Http\Models\Calificacion
-	* @param App\Http\Models\Materia
+	* @param App\Models\Calificacion
+	* @param App\Models\Materia
 	* @param string $clave_etapa (opcional)
 	*/
 	public static function definirCalificacion($calificacion, $materia, $clave_etapa = null)
@@ -52,7 +52,7 @@ class MetodosCalificaciones
 
 	/**
 	* @param int $numero
-	* @param App\Http\Models\Materia $materia
+	* @param App\Models\Materia $materia
 	*/
 	private static function definir($numero, $materia) {
 
@@ -87,8 +87,8 @@ class MetodosCalificaciones
 	}
 
 	/**
-	* @param App\Http\Models\Calificacion
-	* @param App\Http\Models\Materia
+	* @param App\Models\Calificacion
+	* @param App\Models\Materia
 	*/
 	private static function calificacionFinal($calificacion, $materia) {
 		$motivo_id = $calificacion->motivofalta_id;
@@ -131,9 +131,9 @@ class MetodosCalificaciones
 	}
 
 	/**
-	 * @param App\Http\Models\Calificacion $calificacion_anterior
-	 * @param App\Http\Models\Calificacion $calificacion_actual
-	 * @return App\Http\Models\CalificacionHistorial
+	 * @param App\Models\Calificacion $calificacion_anterior
+	 * @param App\Models\Calificacion $calificacion_actual
+	 * @return App\Models\CalificacionHistorial
 	 */
 	public static function crearHistorial($calificacion_anterior, $calificacion_actual): CalificacionHistorial
 	{

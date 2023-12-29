@@ -1,7 +1,7 @@
 <?php
 namespace App\clases\calificaciones;
 
-use App\Http\Models\Grupo;
+use App\Models\Grupo;
 use App\clases\SCEM\Mailer;
 use App\clases\Recolectores\AlumnosReprobadosParcialesRecolector;
 
@@ -68,7 +68,7 @@ class NotificacionReprobadosParciales
 	}
 
 	/**
-	* @param App\Http\Models\Baja
+	* @param App\Models\Baja
 	*/
 	private function armar_mensaje_reprobados_parciales()
 	{

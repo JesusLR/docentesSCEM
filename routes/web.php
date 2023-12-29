@@ -1,7 +1,7 @@
 <?php
 
 use App\Models\User;
-use App\Http\Models\Grupo;
+use App\Models\Grupo;
 use App\Models\User_docente;
 
 /*

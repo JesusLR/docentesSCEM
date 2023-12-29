@@ -8,7 +8,7 @@ use Auth;
 use App\Models\Modules;
 use App\Models\Permission_module_user;
 use App\Models\Permission;
-use App\Http\Models\Permiso_programa_user;
+use App\Models\Permiso_programa_user;
 
 
 class Utils

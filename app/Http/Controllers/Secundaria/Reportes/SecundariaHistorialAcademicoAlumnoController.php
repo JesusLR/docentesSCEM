@@ -7,15 +7,15 @@ use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Collection;
 use App\Http\Controllers\Controller;
 
-use App\Http\Models\Plan;
-use App\Http\Models\Curso;
-use App\Http\Models\Alumno;
-use App\Http\Models\Firmante;
-use App\Http\Models\Programa;
-use App\Http\Models\Historico;
-use App\Http\Models\Secundaria\Secundaria_grupos;
-use App\Http\Models\Secundaria\Secundaria_resumenacademico;
-use App\Http\Models\Ubicacion;
+use App\Models\Plan;
+use App\Models\Curso;
+use App\Models\Alumno;
+use App\Models\Firmante;
+use App\Models\Programa;
+use App\Models\Historico;
+use App\Models\Secundaria\Secundaria_grupos;
+use App\Models\Secundaria\Secundaria_resumenacademico;
+use App\Models\Ubicacion;
 
 use DB;
 use PDF;

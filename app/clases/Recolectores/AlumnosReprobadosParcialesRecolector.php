@@ -3,10 +3,10 @@ namespace App\clases\Recolectores;
 
 use Illuminate\Support\Collection;
 
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Periodo;
-use App\Http\Models\Curso;
-use App\Http\Models\Inscrito;
+use App\Models\Ubicacion;
+use App\Models\Periodo;
+use App\Models\Curso;
+use App\Models\Inscrito;
 use App\Http\Helpers\Utils;
 use App\clases\calificaciones\MetodosCalificaciones;
 use App\clases\cgts\MetodosCgt;
@@ -138,7 +138,7 @@ class AlumnosReprobadosParcialesRecolector
 	}
 
 	/**
-	 * @param App\Http\Models\Curso $curso
+	 * @param App\Models\Curso $curso
 	 * @param Illuminate\Support\Collection $inscripciones
 	 */
 	private static function info_esencial_curso($curso, $inscripciones) {
@@ -163,7 +163,7 @@ class AlumnosReprobadosParcialesRecolector
 	}
 
 	/**
-	 * @param App\Http\Models\Inscrito
+	 * @param App\Models\Inscrito
 	 */
 	private static function info_esencial_inscrito($inscrito) {
 	    $materia = $inscrito->grupo->materia;

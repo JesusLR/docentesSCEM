@@ -1,5 +1,5 @@
 @php
-use App\Http\Models\Docente_encuestas_realizadas;
+use App\Models\Docente_encuestas_realizadas;
 @endphp
 @if (
         (Auth::user()->superior == 1)  || (Auth::user()->posgrado == 1)

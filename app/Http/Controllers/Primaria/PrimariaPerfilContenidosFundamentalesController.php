@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Primaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_contenidos_categorias;
-use App\Http\Models\Primaria\Primaria_contenidos_fundamentales;
-use App\Http\Models\Primaria\Primaria_expediente_perfiles_contenidos;
+use App\Models\Primaria\Primaria_contenidos_categorias;
+use App\Models\Primaria\Primaria_contenidos_fundamentales;
+use App\Models\Primaria\Primaria_expediente_perfiles_contenidos;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Database\QueryException;

@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Secundaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Secundaria\Secundaria_agenda_colores;
-use App\Http\Models\Secundaria\Secundaria_agendas;
+use App\Models\Secundaria\Secundaria_agenda_colores;
+use App\Models\Secundaria\Secundaria_agendas;
 
 class SecundariaAgendaController extends Controller
 {

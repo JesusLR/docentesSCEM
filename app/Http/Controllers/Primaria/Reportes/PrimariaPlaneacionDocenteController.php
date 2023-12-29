@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Primaria\Reportes;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_empleado;
-use App\Http\Models\Ubicacion;
+use App\Models\Primaria\Primaria_empleado;
+use App\Models\Ubicacion;
 use Illuminate\Support\Facades\DB;
 use PDF;
 

@@ -7,12 +7,12 @@ use App\clases\cgts\MetodosCgt;
 use App\clases\personas\MetodosPersonas;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Beca;
-use App\Http\Models\Calificacion;
-use App\Http\Models\Curso;
-use App\Http\Models\Departamento;
-use App\Http\Models\Primaria\Primaria_inscrito;
-use App\Http\Models\Ubicacion;
+use App\Models\Beca;
+use App\Models\Calificacion;
+use App\Models\Curso;
+use App\Models\Departamento;
+use App\Models\Primaria\Primaria_inscrito;
+use App\Models\Ubicacion;
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
@@ -207,7 +207,7 @@ class PrimariaAlumnosBecadosController extends Controller
   
   
     /**
-    * @param App\Http\Models\Curso
+    * @param App\Models\Curso
     */
     private static function obtener_info_alumno($curso)
     {

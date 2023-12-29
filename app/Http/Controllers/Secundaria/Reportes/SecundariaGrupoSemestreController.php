@@ -5,11 +5,11 @@ namespace App\Http\Controllers\Secundaria\Reportes;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Models\Ubicacion;
-use App\Http\Models\Horario;
-use App\Http\Models\Paquete_detalle;
-use App\Http\Models\Secundaria\Secundaria_empleados;
-use App\Http\Models\Secundaria\Secundaria_inscritos;
+use App\Models\Ubicacion;
+use App\Models\Horario;
+use App\Models\Paquete_detalle;
+use App\Models\Secundaria\Secundaria_empleados;
+use App\Models\Secundaria\Secundaria_inscritos;
 use Carbon\Carbon;
 use PDF;
 use DB;

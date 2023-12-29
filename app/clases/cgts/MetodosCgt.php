@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Hash;
 
-use App\Http\Models\Cgt;
-use App\Http\Models\Periodo;
+use App\Models\Cgt;
+use App\Models\Periodo;
 
 class MetodosCgt
 {

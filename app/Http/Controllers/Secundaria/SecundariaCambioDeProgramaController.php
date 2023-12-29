@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Secundaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Cgt;
-use App\Http\Models\Curso;
-use App\Http\Models\Departamento;
-use App\Http\Models\Periodo;
-use App\Http\Models\Programa;
-use App\Http\Models\Ubicacion;
+use App\Models\Cgt;
+use App\Models\Curso;
+use App\Models\Departamento;
+use App\Models\Periodo;
+use App\Models\Programa;
+use App\Models\Ubicacion;
 use Illuminate\Support\Facades\DB;
 
 class SecundariaCambioDeProgramaController extends Controller

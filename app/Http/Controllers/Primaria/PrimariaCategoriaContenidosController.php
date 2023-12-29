@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Primaria;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Models\Primaria\Primaria_contenidos_categorias;
+use App\Models\Primaria\Primaria_contenidos_categorias;
 use App\Models\User;
 use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\DB;
