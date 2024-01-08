@@ -292,8 +292,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 70px;
       }
@@ -472,23 +474,23 @@
       }
 
       .punteado2{
-        border-top: 1px dotted; 
-        border-right: 1px dotted; 
-        border-bottom: 1px dotted; 
+        border-top: 1px dotted;
+        border-right: 1px dotted;
+        border-bottom: 1px dotted;
         border-left: 1px dotted;
       }
 
       .punteado{
-        border-top: 1px dotted; 
-        border-right: 1px dotted; 
-        border-bottom: 1px dotted; 
+        border-top: 1px dotted;
+        border-right: 1px dotted;
+        border-bottom: 1px dotted;
         border-left: 1px dotted;
       }
 
       .punteado3{
-        border-top: 1px ; 
-        border-right: 0px dotted; 
-        border-bottom: 1px dotted; 
+        border-top: 1px ;
+        border-right: 0px dotted;
+        border-bottom: 1px dotted;
         border-left: 1px dotted;
       }
     </style>
@@ -497,13 +499,13 @@
   <body>
 
     @php
-        
+
       use App\Http\Helpers\Utils;
 
       $periodoI = \Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('d').'/'.Utils::num_meses_corto_string(\Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('m')).'/'.\Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('Y');
         $periodoF = \Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('d').'/'.Utils::num_meses_corto_string(\Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('m')).'/'.\Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('Y');
         $periodoVigente = $periodoI.' al '.$periodoF.' ('.$alumnos[0]->perNumero.'-'.$alumnos[0]->perAnio.')';
-    @endphp 
+    @endphp
     <header>
       <div class="row">
         <div class="columns medium-6">
@@ -562,7 +564,7 @@
         $sumaEvidencias = 0;
         $sumaEvidenciasReales = 0;
     @endphp
-    
+
     <div class="row">
       <div class="columns medium-12">
         <table class="table">
@@ -570,8 +572,8 @@
             <tr>
               <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Núm</b></td>
               <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Clave Pago</b></td>
-              <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Nombre Alumno</b></td> 
-              <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Faltas</b></td> 
+              <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Nombre Alumno</b></td>
+              <td class="punteado" align="center" colspan="1" style="font-weight: 400;"><b>Faltas</b></td>
 
             </tr>
           </thead>
@@ -604,19 +606,19 @@
                     @if ($faltas[0]->total_faltas != 0)
                         {{$faltas[0]->total_faltas}}
                     @else
-                        
+
                     @endif
                   </td>
 
 
                 </tr>
-            @endforeach           
-  
+            @endforeach
+
           </tbody>
         </table>
       </div>
     </div>
 
-    
+
   </body>
 </html>

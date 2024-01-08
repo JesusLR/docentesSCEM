@@ -292,8 +292,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 20px;
         margin-bottom: 70px;
       }
@@ -490,21 +492,21 @@
     <header>
         <div class="row">
           <div class="columns medium-12">
-            
+
               <h3 style="margin-top:0px; margin-bottom: 10px;">ESCUELA PRIMARIA MODELO</h3>
               <h3 style="margin-top:0px; margin-bottom: 10px;">LISTA DE FALTAS POR GRUPO-MATERIA</h3>
               <p>Período: {{$primaria_inscritos[0]->perAnioPago}}-{{$primaria_inscritos[0]->perAnioPago+1}}</p>
               <p>Niv/Carr: {{$primaria_inscritos[0]->escClave}} ({{$primaria_inscritos[0]->planClave}}) {{$primaria_inscritos[0]->escNombre}}</p>
               <p>Ubicac. : {{$primaria_inscritos[0]->ubiClave}}-{{$primaria_inscritos[0]->ubiNombre}}</p>
               <p>Materia: {{$primaria_inscritos[0]->matClave}}-{{$primaria_inscritos[0]->matNombre}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Grado : {{$primaria_inscritos[0]->gpoGrado}}° Grupo: {{$primaria_inscritos[0]->gpoClave}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
-              
+
               @if ($primaria_inscritos[0]->matClaveAsignatura != "")
               <p>Asignatura: {{$primaria_inscritos[0]->matClaveAsignatura}}-{{$primaria_inscritos[0]->matNombreAsignatura}}</p>
               @endif
               <p>Docente. : {{$primaria_inscritos[0]->empApellido1}} {{$primaria_inscritos[0]->empApellido2}} {{$primaria_inscritos[0]->empNombre}}</p>
 
               <p>Mes consultado: {{$mes_a_consultar}}</p>
-          </div>     
+          </div>
 
         </div>
 
@@ -524,14 +526,14 @@
                 <th align="center" style="font-weight: 400;width: 5px; padding-top: 7px;">Núm</th>
                 <th align="center" style="font-weight: 400; padding-top: 7px; width: 100px;">Clave de pago</th>
                 <th align="center" style="font-weight: 400;width: 265px; padding-top: 7px; width: 300px;">Nombre del Alumno</th>
-                <th align="center" style="font-weight: 400;">Total de faltas</th>            
-  
+                <th align="center" style="font-weight: 400;">Total de faltas</th>
+
               </tr>
             </thead>
             <tbody>
               @foreach ($primaria_inscritos as $key => $itemInscritos)
               <tr>
-                
+
                 <td align="center" style="padding-top: 5px;">{{$key+1}}</td>
                 <td align="center" style="padding-top: 5px;">{{$itemInscritos->aluClave}}</td>
                 <td style="padding-top: 5px;">{{$itemInscritos->perApellido1}} {{$itemInscritos->perApellido2}} {{$itemInscritos->perNombre}}</td>
@@ -570,11 +572,11 @@
                   @endif
 
                 </td>
-                
-                
-                                            
+
+
+
               </tr>
-              @endforeach  
+              @endforeach
             </tbody>
           </table>
         </div>

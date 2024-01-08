@@ -292,8 +292,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -367,7 +367,7 @@
         padding: 5px;
         border-radius: 2px;
       }
-      
+
       .estilos-tabla {
         width: 100%;
       }
@@ -391,9 +391,9 @@
       .page_break { page-break-before: always; }
       /** Define the footer rules **/
       footer {
-        position: fixed; 
-        bottom: 0px; 
-        left: 0cm; 
+        position: fixed;
+        bottom: 0px;
+        left: 0cm;
         right: 0cm;
         /** Extra personal styles **/
         color: #000;
@@ -410,7 +410,7 @@
         margin-left: 5px;
         margin-right: 5px;
       }
-      
+
       #watermark { position: fixed; top: 15%; left: 0;  width: 700px; height: 700px; opacity: .3; }
       .img-header{
         height: 80px;
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 70px;
       }
@@ -478,7 +480,7 @@
     <header>
       <div class="row">
         <div class="columns medium-6">
-          
+
           <h4 style="margin-top:0px; margin-bottom: 10px;">PRIMARIA "MODELO"</h4>
           <h4 style="margin-top:0px; margin-bottom: 10px;">LISTA DE CALIFICACIONES POR GRUPO-MATERIA</h4>
           <p><b>Ubicación:</b> {{$inscritos[0]->ubiClave}} {{$inscritos[0]->ubiNombre}}</p>
@@ -489,7 +491,7 @@
           @if ($inscritos[0]->matClaveAsignatura != "")
           <p><b>Asignatura:</b> {{$inscritos[0]->matClaveAsignatura}}-{{$inscritos[0]->matNombreAsignatura}}</p>
           @endif
-          
+
         </div>
         <div class="columns medium-6">
           <div style="text-align: right;">
@@ -497,19 +499,19 @@
             <p>{{$horaActual}}</p>
             <p style="margin-top: 65px;">Mes: {{$mes_a_consultar}}</p>
 
-             
+
           </div>
         </div>
       </div>
       {{--  <div class="row" style="margin-bottom: 2px;">
         <div class="columns medium-12">
           <p>
-           Periodo: 
+           Periodo:
           </p>
         </div>  --}}
       </div>
     </header>
-    
+
     <br><br>
 
     <br>
@@ -535,11 +537,11 @@
           <tbody>
             @foreach ($inscritos as $key => $itemInscritos)
             <tr>
-              
+
               <td align="center" >{{$key+1}}</td>
               <td>{{$itemInscritos->clavePago}}</td>
               <td>{{$itemInscritos->perApellido1}} {{$itemInscritos->perApellido2}} {{$itemInscritos->perNombre}}</td>
-              <td align="center">          
+              <td align="center">
                 @if ($mes_a_consultar == "SEPTIEMBRE")
                     {{$itemInscritos->septiembre}}
                   @endif
@@ -578,13 +580,13 @@
 
                   @if ($mes_a_consultar == "JUNIO")
                     {{$itemInscritos->junio}}
-                  @endif    
+                  @endif
               </td>
 
-              <td></td>             
-                          
+              <td></td>
+
             </tr>
-            @endforeach  
+            @endforeach
           </tbody>
         </table>
       </div>

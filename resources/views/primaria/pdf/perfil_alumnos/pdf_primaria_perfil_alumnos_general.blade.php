@@ -293,8 +293,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -427,6 +427,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 70px;
       }
@@ -480,8 +482,8 @@
     </style>
 
     <style>
-      .rectangulo {     
-        border: 1px solid #555;          
+      .rectangulo {
+        border: 1px solid #555;
         -moz-border-radius: 50%;
         -webkit-border-radius: 50%;
         border-radius: 70%;
@@ -500,7 +502,7 @@
           background: #000;
      }
 
-     
+
      </style>
 </head>
 
@@ -537,12 +539,12 @@
             <p style="text-align: center; font-size: 13px;"><b>Programa:</b> {{$programa}}</p>
             <p style="text-align: center; font-size: 13px;"><b>{{$grado}} Grupo {{$grupo}} - {{$cilo_escolar}}</b></p>
 
-           
-      
+
+
                   <br>
           </div>
         </div>
-      
+
         <div class="right">
          <img class="img-header-logo" style="margin-top: -95px;" src="{{base_path('resources/assets/img/logo.jpg')}}" alt="">
         </div>
@@ -554,14 +556,14 @@
       $promedio = collect($resultado_array);
       @endphp
 
-      
-      <p style="text-align: center; font-size: 13px;"><b>Alumno:</b> {{$item->perApellido1}} {{$item->perApellido2}} {{$item->perNombre}} - <b>Clave pago: </b> {{$item->aluClave}} - <b>Promedio Sep: <label style="text-decoration: underline">{{$promedio[0]->promedioCursoSEP}}</label></b></p> 
+
+      <p style="text-align: center; font-size: 13px;"><b>Alumno:</b> {{$item->perApellido1}} {{$item->perApellido2}} {{$item->perNombre}} - <b>Clave pago: </b> {{$item->aluClave}} - <b>Promedio Sep: <label style="text-decoration: underline">{{$promedio[0]->promedioCursoSEP}}</label></b></p>
 
       <br>
 
     {{--  <p style="text-align: center; font-size: 13px;"><b>Promedio SEP: <label style="text-decoration: underline">{{$promedio[0]->promedioCursoSEP}}</label></b></p>  --}}
 
-    
+
     @if ($item->curEstado == "B")
       <p style="font-size: 13px; position: relative; left: 800px; margin-top: -25px"><b style="color: red;">BAJA ACADÉMICA</b></p>
         @else
@@ -570,7 +572,7 @@
             <p style="font-size: 13px; position: relative; left: 800px; margin-top: -50px"><b style="text-decoration: underline">UTILIZA LENTES</b></p>
           @endif
     @endif
-   
+
     <img class="img-header" style="margin-top:-165px;" src="{{base_path('storage/app/public/primaria/cursos/fotos/' . $perAnioPago . '/' . $item->curPrimariaFoto) }}" alt="">
 
 
@@ -579,24 +581,24 @@
           <div class="page-number"></div>
         </footer>
         @endif
-   
+
         <div class="row">
           <div class="columns medium-12">
               <table class="table table-bordered">
-                  <thead>   
+                  <thead>
                       <tr>
                         <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                           <h3>COMPETENCIAS CURRICULARES DE ESPAÑOL</h3>
                         </th>
-                      </tr>              
-                      <tr>     
+                      </tr>
+                      <tr>
                           <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                           <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                           <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
                       </tr>
                   </thead>
                   <tbody>
-                      
+
                         @foreach ($perfiles_contenidos as $perfil_cont)
                           @if ($perfil_cont->aluClave == $item->aluClave)
                             @if ($perfil_cont->primaria_contenidos_categoria_id == "2" && $perfil_cont->primaria_contenidos_calificadores_id != null)
@@ -605,10 +607,10 @@
                               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->calificador}}</td>
                               <td style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->observacion_contenido}}</td>
                             </tr>
-                            @endif 
-                          @endif                                                     
-                        @endforeach    
-                                                         
+                            @endif
+                          @endif
+                        @endforeach
+
                   </tbody>
               </table>
 
@@ -616,19 +618,19 @@
               {{--  matematicas   --}}
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>COMPETENCIAS CURRICULARES DE MATEMATICAS</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
                     </tr>
                 </thead>
-                <tbody>     
+                <tbody>
 
                       @foreach ($perfiles_contenidos as $perfil_cont)
                           @if ($perfil_cont->aluClave == $item->aluClave)
@@ -638,10 +640,10 @@
                               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->calificador}}</td>
                               <td style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->observacion_contenido}}</td>
                             </tr>
-                            @endif 
-                          @endif                                                     
-                        @endforeach 
-                                                       
+                            @endif
+                          @endif
+                        @endforeach
+
                 </tbody>
               </table>
 
@@ -649,22 +651,22 @@
 
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>PARTICIPACIÓN EN CLASE</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
                     </tr>
                 </thead>
                 <tbody>
-                    
 
-                                  
+
+
                       @foreach ($perfiles_contenidos as $perfil_cont)
                             @if ($perfil_cont->aluClave == $item->aluClave)
                               @if ($perfil_cont->primaria_contenidos_categoria_id == "3" && $perfil_cont->primaria_contenidos_calificadores_id != null)
@@ -673,22 +675,22 @@
                                 <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->calificador}}</td>
                                 <td style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">{{$perfil_cont->observacion_contenido}}</td>
                               </tr>
-                              @endif 
-                            @endif                                                     
-                          @endforeach 
+                              @endif
+                            @endif
+                          @endforeach
                 </tbody>
               </table>
 
 
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>TAREAS</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
@@ -711,27 +713,27 @@
                         @endif
                       @endif
                     @endforeach
-                                                      
+
                 </tbody>
               </table>
 
 
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>ASISTENCIA Y PUNTUALIDAD</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
                     </tr>
                 </thead>
                 <tbody>
-                      
+
                       @foreach ($perfiles_contenidos as $perfil_cont)
                         @if ($perfil_cont->aluClave == $item->aluClave)
                           @if ($perfil_cont->primaria_contenidos_categoria_id == "5" && $perfil_cont->primaria_contenidos_calificadores_id != null)
@@ -747,19 +749,19 @@
                           @endif
                         @endif
                       @endforeach
-                                                      
+
                 </tbody>
               </table>
 
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>CONVIVENCIA ESCOLAR</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
@@ -783,26 +785,26 @@
                         @endif
                       @endif
                     @endforeach
-                                                      
+
                 </tbody>
               </table>
 
 
               <br>
               <table class="table table-bordered">
-                <thead>   
+                <thead>
                     <tr>
                       <th align="center" colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid; background-color: #4F81BC;">
                         <h3>LIMPIEZA Y ORDEN</h3>
                       </th>
-                    </tr>              
-                    <tr>     
+                    </tr>
+                    <tr>
                         <th align="center" style="width: 320; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">DESCRIPCIÓN DEL CONTENIDO</th>
                         <th align="center" style="width: 10px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">CALIFICACIÓN</th>
                         <th align="center" style="width: 490px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">OBSERVACIÓN(S) PARTICULAR</th>
                     </tr>
                 </thead>
-                <tbody>         
+                <tbody>
 
 
                       @foreach ($perfiles_contenidos as $perfil_cont)
@@ -820,7 +822,7 @@
                         @endif
                       @endif
                     @endforeach
-                                                      
+
                 </tbody>
               </table>
 
@@ -834,25 +836,25 @@
                       </th>
                       <th style="border-top: 0px solid; border-right: 0px solid #000; border-bottom: 0px; border-left: 1px solid;"></th>
                     </tr>
-                    {{--  <tr>     
+                    {{--  <tr>
                             <th align="center" style="width: 320; height: 0px;border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;"><label style="opacity: .01;">DESCRIPCIÓN DEL CONTENIDO</label></th>
                             <th align="center" style="width: 10px; height: 0px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;"><label style="opacity: .01;">CALIFICACIÓN</label></th>
                             <th align="center" style="width: 490px; height: 0px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;"><label style="opacity: .01;">OBSERVACIÓN(S) PARTICULAR</label></th>
                         </tr>  --}}
                   </thead>
                   <tbody>
-                
+
                     <tr>
-                
+
                       <td
                         style="width:1015px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                         {{$item->observaciones}}
                       </td>
-                
+
                       <td style="border-top: 0px solid; border-right: 0px solid; border-bottom: 0px solid; border-left: 1px solid;">
                       </td>
-                
-                
+
+
                     </tr>
                   </tbody>
                 </table>
@@ -860,19 +862,19 @@
               </div>
 
 
-       
+
         @if (!$loop->last)
           <div class="page_break"></div>
         @endif
 
       @endforeach
-        
+
     {{--  </header>  --}}
 
-    
+
     <br><br>
 
-    
+
 
     {{-- <footer id="footer">
         <div class="page-number"></div>

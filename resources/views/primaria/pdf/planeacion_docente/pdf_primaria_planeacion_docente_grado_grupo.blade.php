@@ -293,8 +293,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -368,7 +368,7 @@
         padding: 5px;
         border-radius: 2px;
       }
-      
+
       .estilos-tabla {
         width: 100%;
       }
@@ -392,9 +392,9 @@
       .page_break { page-break-before: always; }
       /** Define the footer rules **/
       footer {
-        position: fixed; 
-        bottom: 0px; 
-        left: 0cm; 
+        position: fixed;
+        bottom: 0px;
+        left: 0cm;
         right: 0cm;
         /** Extra personal styles **/
         color: #000;
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 30px;
       }
@@ -493,8 +495,8 @@
     </style>
 
       <style>
-        .rectangulo {     
-          border: 1px solid #555;          
+        .rectangulo {
+          border: 1px solid #555;
           -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
           border-radius: 70%;
@@ -513,14 +515,14 @@
             background: #000;
        }
 
-       
+
        </style>
 </head>
 
 
 
 <body>
- 
+
   <footer id="footer">
     <div class="page-number"></div>
   </footer>
@@ -534,15 +536,15 @@
       @if ($id == $planeacion->id && $vuelta++ == 1)
       <table class="table table-bordered">
         <colgroup span="3"></colgroup>
-        <thead>      
-            <tr>    
+        <thead>
+            <tr>
                <td align="center" style="width: 50px; height:170px; border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;" rowspan="3" scope="rowgroup">
                   <img class="img-header" src="{{base_path('resources/assets/img/logo.jpg')}}" alt="">
                </td>
-     
+
                 <td align="center" colspan="3" style="border-top: 1px solid; border-right: 1px; border-bottom: 1px; border-left: 1px solid;">
                   <p>Primaria Escuela Modelo</p>
-                  <p>CCT31PPR0097X</p> 
+                  <p>CCT31PPR0097X</p>
                   <p>Ciclo escolar {{$ciclo_escolar}}</p>
                   <p>PLANEACIÓN DE ACTIVIDADES DE LA ASIGNATURA: {{$planeacion->matNombre}}</p>
                 </td>
@@ -552,7 +554,7 @@
                   <p>{{$trimestre}}</p>
                 </td>
             </tr>
-              <tr>     
+              <tr>
                 <td colspan="5" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">
                   @if ($planeacion->empSexo == "F")
                      Maestra:  {{$planeacion->empNombre.' '.$planeacion->empApellido1.' '.$planeacion->empApellido2}}
@@ -561,7 +563,7 @@
                   @endif
                 </td>
             </tr>
-            <tr>     
+            <tr>
               <th colspan="3" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">
                 Semana del {{\Carbon\Carbon::parse($planeacion->semana_inicio)->format('d-m-Y')}} al {{\Carbon\Carbon::parse($planeacion->semana_fin)->format('d-m-Y')}}
               </th>
@@ -571,7 +573,7 @@
             </tr>
             <tr>
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">
-                Mes: 
+                Mes:
                 {{$mes}}
               </td>
               <td colspan="5" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px; border-left: 1px solid;">
@@ -579,7 +581,7 @@
                 <br>
                 Valor del mes: {{$planeacion->valor_mes}}
                 <br>
-                Norma de urbanidad: {{$planeacion->norma_urbanidad}}           
+                Norma de urbanidad: {{$planeacion->norma_urbanidad}}
               </td>
             </tr>
             <tr>
@@ -589,38 +591,38 @@
             </tr>
             <tr>
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
-                BLOQUE 
+                BLOQUE
                 {{$planeacion->bloque}}
               </td>
               <td colspan="5" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
-                  <b>Objetivo particular: </b>  
-                  {{$planeacion->objetivo_particular}}    
+                  <b>Objetivo particular: </b>
+                  {{$planeacion->objetivo_particular}}
               </td>
             </tr>
-    
+
             <tr>
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>CONOCIMIENTOS</label><br>
                 <label>(tema)</label>
               </th>
-    
+
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>Aprendizaje esperado</label><br>
                 <label>(objetivo)</label>
               </th>
-    
+
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>Estrategias y secuencia didáctica</label><br>
               </th>
-    
+
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>Libro</label><br>
               </th>
-    
+
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>Habilidad o conocimiento aplicado</label><br>
               </th>
-    
+
               <th align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 <label>Evaluación</label><br>
               </th>
@@ -633,37 +635,37 @@
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->tema}}
               </td>
-      
+
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->objetivo}}
               </td>
-      
+
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->estrategias}}
               </td>
-      
+
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->libro}}
               </td>
-      
+
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->habilidad}}
               </td>
               <td align="center" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
                 {{$planeaciones_temas->evaluacion}}
               </td>
-            </tr> 
-            @endif          
-          @endforeach   
+            </tr>
+            @endif
+          @endforeach
           <tr>
             <td colspan="6" style="border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">
-              <b>Notas/Observaciones: </b>  {{$planeacion->notas_observaciones}}    
+              <b>Notas/Observaciones: </b>  {{$planeacion->notas_observaciones}}
             </td>
-          </tr>                                       
+          </tr>
         </tbody>
       </table>
-      @endif        
-    @endforeach  
+      @endif
+    @endforeach
     @if (!$loop->last)
       <div class="page_break"></div>
     @endif
@@ -672,12 +674,12 @@
     @endphp
   @endforeach
 
-  
 
 
-    
 
-    
+
+
+
     {{-- <div class="page_break"></div> --}}
 
 

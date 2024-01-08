@@ -292,8 +292,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 20px;
         margin-bottom: 70px;
       }
@@ -490,22 +492,22 @@
     <header>
         <div class="row">
           <div class="columns medium-12">
-            
+
               <h3 style="margin-top:0px; margin-bottom: 10px;">Preparatoria "ESCUELA MODELO"</h3>
               <h3 style="margin-top:0px; margin-bottom: 10px;">LISTA DE ASISTENCIA POR GRUPO-MATERIA</h3>
               <p>Perido: {{ \Carbon\Carbon::parse($inscritos[0]->fecha_inicio)->format('d/m/Y')}} al {{ \Carbon\Carbon::parse($inscritos[0]->fecha_fin)->format('d/m/Y')}}</p>
               <p>Niv/Carr: {{$inscritos[0]->escClave}} ({{$inscritos[0]->planClave}}) {{$inscritos[0]->escNombre}}</p>
               <p>Ubicac. : {{$inscritos[0]->ubiClave}} {{$inscritos[0]->ubiNombre}}</p>
               <p>Materia: {{$inscritos[0]->matClave}} {{$inscritos[0]->matNombre}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  Grado : {{$inscritos[0]->gpoGrado}}° Grupo: {{$inscritos[0]->gpoClave}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Fecha: __________________________</p>
-  
+
               @if ($inscritos[0]->gpoMatComplementaria != "")
-                <p>Materia complementaria: {{$inscritos[0]->gpoMatComplementaria}}</p>                               
+                <p>Materia complementaria: {{$inscritos[0]->gpoMatComplementaria}}</p>
               @endif
               <p>
                 Docente: {{$inscritos[0]->empNombre}} {{$inscritos[0]->empApellido1}} {{$inscritos[0]->empApellido2}} ({{$inscritos[0]->empleados_id}})
               </p>
               {{--  <p>Incluye alumnos inscritos, PRE-inscritos y CON-dicionados.</p>  --}}
-            
+
           </div>
 
         </div>
@@ -522,54 +524,54 @@
                 <th align="center" style="font-weight: 400;width: 265px; padding-top: 7px;">Nombre del Alumno</th>
                 @for ($i = 0; $i < 25; $i++)
                 <th style="font-weight: 400;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                         <li><div><span style="font-weight: 400;"></span></div></li>
                     </ul>
                 </th>
                 @endfor
-                
+
                 <th style="font-weight: 400;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                         <li><div style="width: 17px"><span style="font-weight: 400;">Calif</span></div></li>
                     </ul>
                 </th>
                 <th style="font-weight: 400;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                         <li><div style="width: 17px"><span style="font-weight: 400;">Falt</span></div></li>
                     </ul>
                 </th>
-              
-  
+
+
               </tr>
             </thead>
             <tbody>
               @foreach ($inscritos as $key => $itemInscritos)
               <tr>
-                
+
                 <td align="center" style="padding-top: 5px;">{{$key+1}}</td>
                 <td style="padding-top: 5px;">{{$itemInscritos->clavePago}}</td>
                 <td style="padding-top: 5px;">{{$itemInscritos->perApellido1}} {{$itemInscritos->perApellido2}} {{$itemInscritos->perNombre}}</td>
                 @for ($i = 0; $i < 25; $i++)
                 <td style="padding-top: 5px;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                       <li><div><span></span></div></li>
                     </ul>
                 </td>
                 @endfor
                 <td style="padding-top: 5px;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                       <li><div style="width: 17px"><span></span></div></li>
                     </ul>
                 </td>
                 <td style="padding-top: 5px;">
-                    <ul class="listas-asistencia">  
+                    <ul class="listas-asistencia">
                       <li><div style="width: 17px"><span></span></div></li>
                     </ul>
                 </td>
-                
-                                            
+
+
               </tr>
-              @endforeach  
+              @endforeach
             </tbody>
           </table>
         </div>
