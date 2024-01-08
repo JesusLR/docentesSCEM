@@ -358,8 +358,8 @@
             width: 100%;
             display: block;
             position: relative;
-            margin-left: -30px;
-            margin-right: -30px;
+            /* margin-left: -30px; */
+            /* margin-right: -30px; */
         }
 
         .row::after {
@@ -523,6 +523,8 @@
         }
 
         @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
             margin-top: 20px;
             margin-bottom: 70px;
         }
@@ -593,7 +595,7 @@
         .page-number:before {
             content: "Pág " counter(page);
           }
-    
+
           .page-break {
               page-break-after: always;
           }
@@ -665,15 +667,15 @@
                         |__|
                     </th>
                     @endfor
-                    
+
                     <th style="font-weight: 400;">
                         |Calif|
                     </th>
                     <th style="font-weight: 400;">
                         |Falt|
                     </th>
-                  
-      
+
+
                   </tr>
                 </thead>
                 <tbody>
@@ -695,10 +697,10 @@
                             </td>
                             <td style="padding-top: 5px;">
                                |___|
-                            </td>     
+                            </td>
                         </tr>
-                        @endif                  
-                    @endforeach                   
+                        @endif
+                    @endforeach
                 </tbody>
               </table>
             </div>

@@ -293,8 +293,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -368,7 +368,7 @@
         padding: 5px;
         border-radius: 2px;
       }
-      
+
       .estilos-tabla {
         width: 100%;
       }
@@ -392,9 +392,9 @@
       .page_break { page-break-before: always; }
       /** Define the footer rules **/
       footer {
-        position: fixed; 
-        bottom: 0px; 
-        left: 0cm; 
+        position: fixed;
+        bottom: 0px;
+        left: 0cm;
         right: 0cm;
         /** Extra personal styles **/
         color: #000;
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 30px;
       }
@@ -493,8 +495,8 @@
     </style>
 
       <style>
-        .rectangulo {     
-          border: 1px solid #555;          
+        .rectangulo {
+          border: 1px solid #555;
           -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
           border-radius: 70%;
@@ -513,7 +515,7 @@
             background: #000;
        }
 
-       
+
        </style>
 </head>
 
@@ -529,7 +531,7 @@
       <p style="text-align: center; font-size: 13px;">Grado: {{$grado}} Grupo: {{$grupo}}</p>
       {{-- <br> --}}
       <p style="text-align: center; font-size: 13px; text-decoration: underline;"><strong>HISTORICO DE AHORROS
-          ESCOLARES</strong></p>          
+          ESCOLARES</strong></p>
           <br>
     </div>
   </div>
@@ -552,14 +554,14 @@
   @endif
 
   @foreach ($ahorro_alumnos as $ahorro_alumno)
-    @if ($clavePago == $ahorro_alumno->clave_pago && $vuelta++ == 1)    
+    @if ($clavePago == $ahorro_alumno->clave_pago && $vuelta++ == 1)
 
 
 
     <br>
           <div class="row">
             @php
-                // manda el monto inicial 
+                // manda el monto inicial
                 $resultado_array =  DB::select("call procPrimariaAhorroSaldoAlumnoCurso(" . $ahorro_alumno->curso_id . ")");
                 $resultado_collection = collect($resultado_array);
                 $saldo_inicial = $resultado_collection[0]->_saldo;
@@ -568,9 +570,9 @@
             <p><strong>Saldo actual: </strong> <label style="font-size: 16px;">${{$saldo_inicial}}</label></p>
             <br>
             <div class="columns medium-12">
-              <table class="table table-bordered">               
-                  <thead>                    
-                      <tr>     
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
                           <th align="center" style="width: 70px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">FECHA</th>
                           <th align="center" style="width: 250px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">OBSERVACIÓN</th>
                           <th align="center" style="width: 100px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">SALDO INICIAL</th>
@@ -579,32 +581,32 @@
                           <th align="center" style="width: 100px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">SALDO FINAL</th>
                           <th align="center" style="width: 70px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">MES</th>
                           <th align="center" style="width: 200px; border-top: 1px solid; border-right: 1px solid; border-bottom: 1px solid; border-left: 1px solid;">REALIZADO POR</th>
-                        
+
                         </tr>
                   </thead>
-                  <tbody>    
+                  <tbody>
                     @foreach ($ahorro_alumnos as $item)
                       @if ($clavePago == $item->clave_pago)
                       <tr>
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{\Carbon\Carbon::parse($item->fecha)->format('d-m-Y')}}</td>   
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->observacion}}</td>                    
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->saldo_inicial}}</td> 
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->movimiento}}</td> 
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->importe}}</td> 
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->saldo_final}}</td> 
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->aplica_mes_nombre}}</td> 
-                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->empApellido1.' '.$item->empApellido2.' '.$item->empNombre}}</td> 
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{\Carbon\Carbon::parse($item->fecha)->format('d-m-Y')}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->observacion}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->saldo_inicial}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->movimiento}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->importe}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->saldo_final}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->aplica_mes_nombre}}</td>
+                        <td align="center" style="height:19px; border-top: 0px solid; border-right: 0px solid; border-bottom: 1px solid; border-left: 0px solid; border-style: dotted;">{{$item->empApellido1.' '.$item->empApellido2.' '.$item->empNombre}}</td>
 
                       </tr>
-                      @endif                    
-                    @endforeach                                                   
+                      @endif
+                    @endforeach
                   </tbody>
               </table>
             </div>
           </div>
     @endif
   @endforeach
-  
+
     @if (!$loop->last)
       <div class="page_break"></div>
     @endif

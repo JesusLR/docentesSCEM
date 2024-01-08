@@ -292,8 +292,8 @@
         width:100%;
         display: block;
         position: relative;
-        margin-left: -30px;
-        margin-right: -30px;
+        /* margin-left: -30px; */
+        /* margin-right: -30px; */
       }
       .row::after {
           content: "";
@@ -420,6 +420,8 @@
         display: block;
       }
       @page {
+        margin-left: 0.5cm;
+        margin-right: 0.5cm;
         margin-top: 30px;
         margin-bottom: 70px;
       }
@@ -472,23 +474,23 @@
       }
 
       .punteado2{
-        border-top: 1px dotted; 
-        border-right: 1px dotted; 
-        border-bottom: 1px dotted; 
+        border-top: 1px dotted;
+        border-right: 1px dotted;
+        border-bottom: 1px dotted;
         border-left: 1px dotted;
       }
 
       .punteado{
-        border-top: 1px dotted; 
-        border-right: 1px dotted; 
-        border-bottom: 1px; 
+        border-top: 1px dotted;
+        border-right: 1px dotted;
+        border-bottom: 1px;
         border-left: 1px dotted;
       }
 
       .punteado3{
-        border-top: 1px ; 
-        border-right: 0px dotted; 
-        border-bottom: 1px dotted; 
+        border-top: 1px ;
+        border-right: 0px dotted;
+        border-bottom: 1px dotted;
         border-left: 1px dotted;
       }
     </style>
@@ -497,7 +499,7 @@
   <body>
 
     @php
-    
+
       use App\Http\Helpers\Utils;
       $periodoI = \Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('d').'/'.Utils::num_meses_corto_string(\Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('m')).'/'.\Carbon\Carbon::parse($alumnos[0]->perFechaInicial)->format('Y');
       $periodoF = \Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('d').'/'.Utils::num_meses_corto_string(\Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('m')).'/'.\Carbon\Carbon::parse($alumnos[0]->perFechaFinal)->format('Y');
@@ -547,7 +549,7 @@
         $pos2 = 1;
         $pos3 = 1;
     @endphp
-    
+
     <div class="row">
       <div class="columns medium-12">
         <table class="table">
@@ -579,18 +581,18 @@
                         @foreach ($totalEvideciasVal as $itemEv)
                           @if ($evidencias == $itemEv->eviNumero && $pos3++ == 1 && $itemEv->aluClave == $aluClave)
                           <td class="punteado2" align="center" style="font-weight: 400; widtd: 20px;">{{$itemEv->ievFaltas}}</td>
-                          @endif       
+                          @endif
                           @php
                                 $pos3 = 1;
-                            @endphp                    
-                        @endforeach  
-                            
+                            @endphp
+                        @endforeach
+
                       @endforeach
                     </tr>
                 @endif
               @endforeach
               @php
-              $pos2 = 1;              
+              $pos2 = 1;
               @endphp
             @endforeach
           </tbody>
@@ -603,6 +605,6 @@
     <div class="row">
       <p>NOTA: Solo se muestra las evidencias donde se capturan faltas</p>
     </div>
-    
+
   </body>
 </html>
