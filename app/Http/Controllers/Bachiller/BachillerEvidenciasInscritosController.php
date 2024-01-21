@@ -355,14 +355,14 @@ class BachillerEvidenciasInscritosController extends Controller
             return back();
         }
 
-       
-        if(count($bachiller_inscritos) > 0){          
+
+        if(count($bachiller_inscritos) > 0){
 
             foreach ($bachiller_inscritos as $inscrito) {
                 $bachiller_inscrito_id = $inscrito->id;
 
                 foreach ($bachiller_evidencias as $evidencia) {
-                    $evidencia_id = $evidencia->id; 
+                    $evidencia_id = $evidencia->id;
 
                     $bachiller_inscritos_evidencias =  Bachiller_inscritos_evidencias::where('evidencia_id', '=', $evidencia_id)
                     ->where('bachiller_inscrito_id', '=', $bachiller_inscrito_id)
@@ -370,7 +370,7 @@ class BachillerEvidenciasInscritosController extends Controller
                     ->first();
 
 
-                    // Si esta vacio creara el registro 
+                    // Si esta vacio creara el registro
                     if($bachiller_inscritos_evidencias == ""){
 
                         $procBachillerAgregaEvidenciaAlumno = DB::select("call procBachillerAgregaEvidenciaAlumno(
@@ -383,7 +383,7 @@ class BachillerEvidenciasInscritosController extends Controller
                 }
             }
 
-            
+
 
         }
 
@@ -401,7 +401,7 @@ class BachillerEvidenciasInscritosController extends Controller
         // }
 
 
-   
+
 
         $usuario_docente_id = auth()->user()->id;
 
@@ -691,7 +691,7 @@ class BachillerEvidenciasInscritosController extends Controller
 
             $bachiller_evidencias = Bachiller_evidencias::findOrFail($bachiller_evidencia_id);
 
-            
+
 
             // Validamos que los puntos no sean mayor a lo capturado para la evidencia
             for ($x = 0; $x < count($ievPuntos); $x++) {
@@ -717,10 +717,10 @@ class BachillerEvidenciasInscritosController extends Controller
                     ->update([
                         'bachiller_inscrito_id' => $bachiller_inscrito_id[$x],
                         'ievPuntos' => $puntos_nuevos[$x],
-                        'ievClaveCualitativa1' => $ievClaveCualitativa1[$x],
-                        'ievClaveCualitativa2' => $ievClaveCualitativa2[$x],
-                        'ievClaveCualitativa3' => $ievClaveCualitativa3[$x],
-                        'ievFaltas' => $ievFaltas[$x],
+                        'ievClaveCualitativa1' => (isset($request->ievClaveCualitativa1)) ? $ievClaveCualitativa1[$x] : false,
+                        'ievClaveCualitativa2' => (isset($request->ievClaveCualitativa2)) ? $ievClaveCualitativa2[$x] : false,
+                        'ievClaveCualitativa3' => (isset($request->ievClaveCualitativa3)) ? $ievClaveCualitativa3[$x] : false,
+                        'ievFaltas' => (isset($request->ievFaltas)) ? $ievFaltas[$x] : false,
                         'ievFechaCaptura' => $fechaActual->format('Y-m-d'),
                         'ievHoraCaptura' => $fechaActual->format('H:i:s'),
                         'bachiller_empleado_id' => auth()->user()->id,
@@ -785,17 +785,17 @@ class BachillerEvidenciasInscritosController extends Controller
             }
 
             $faltantes = DB::select("SELECT
-            COUNT(*) AS total_null 
+            COUNT(*) AS total_null
             FROM
                 bachiller_inscritos_evidencias
-                INNER JOIN bachiller_inscritos ON bachiller_inscritos_evidencias.bachiller_inscrito_id = bachiller_inscritos.id 
+                INNER JOIN bachiller_inscritos ON bachiller_inscritos_evidencias.bachiller_inscrito_id = bachiller_inscritos.id
             WHERE
-            bachiller_inscritos_evidencias.deleted_at IS NULL 
-            AND bachiller_inscritos.deleted_at IS NULL 
-            AND bachiller_inscritos.bachiller_grupo_id = $bachiller_grupo_id 
+            bachiller_inscritos_evidencias.deleted_at IS NULL
+            AND bachiller_inscritos.deleted_at IS NULL
+            AND bachiller_inscritos.bachiller_grupo_id = $bachiller_grupo_id
             AND bachiller_inscritos_evidencias.ievPuntos IS NULL");
 
-            alert('Escuela Modelo', 'Los puntos evidencias se han actualizado con éxito', 'success')->showConfirmButton();            
+            alert('Escuela Modelo', 'Los puntos evidencias se han actualizado con éxito', 'success')->showConfirmButton();
             return back();
         }
     }

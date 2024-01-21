@@ -502,14 +502,14 @@ class PrimariaCalificacionesController extends Controller
             ->where('primaria_grupos.id', $id)
             ->get();
 
-        // actualizamos el estado del grupo 
+        // actualizamos el estado del grupo
         if (count($primaria_calificaciones) <= 0) {
             DB::update("UPDATE primaria_grupos SET estado_act='B' WHERE id=$id");
         }
 
-        // validaremos si tiene calificaciones y si es menor a uno lo creamos 
+        // validaremos si tiene calificaciones y si es menor a uno lo creamos
         if (count($alumnos_inscritos) > 0) {
-            // creamos un ciclo para agregar calificaciones de todos los meses 
+            // creamos un ciclo para agregar calificaciones de todos los meses
             if (count($mesEvidencia) > 0) {
                 foreach ($mesEvidencia as $key => $mes_evidencia) {
                     //dd($mesEvidencia[0]->id);
@@ -771,17 +771,17 @@ class PrimariaCalificacionesController extends Controller
                         'primaria_grupo_evidencia_id' => $primaria_grupo_evidencia_id,
                         'numero_evaluacion' => $numero_evaluacion,
                         'mes_evaluacion' => $mes_evaluacion,
-                        'calificacion_evidencia1' => $evidencia1[$i],
-                        'calificacion_evidencia2' => $evidencia2[$i],
-                        'calificacion_evidencia3' => $evidencia3[$i],
-                        'calificacion_evidencia4' => $evidencia4[$i],
-                        'calificacion_evidencia5' => $evidencia5[$i],
-                        'calificacion_evidencia6' => $evidencia6[$i],
-                        'calificacion_evidencia7' => $evidencia7[$i],
-                        'calificacion_evidencia8' => $evidencia8[$i],
-                        'calificacion_evidencia9' => $evidencia9[$i],
-                        'calificacion_evidencia10' => $evidencia10[$i],
-                        'promedio_mes' => $actualizandoPromedio[$i],
+                        'calificacion_evidencia1' => (isset($evidencia1[$i])) ? $evidencia1[$i] : false,
+                        'calificacion_evidencia2' => (isset($evidencia2[$i])) ? $evidencia2[$i] : false,
+                        'calificacion_evidencia3' => (isset($evidencia3[$i])) ? $evidencia3[$i] : false,
+                        'calificacion_evidencia4' => (isset($evidencia4[$i])) ? $evidencia4[$i] : false,
+                        'calificacion_evidencia5' => (isset($evidencia5[$i])) ? $evidencia5[$i] : false,
+                        'calificacion_evidencia6' => (isset($evidencia6[$i])) ? $evidencia6[$i] : false,
+                        'calificacion_evidencia7' => (isset($evidencia7[$i])) ? $evidencia7[$i] : false,
+                        'calificacion_evidencia8' => (isset($evidencia8[$i])) ? $evidencia8[$i] : false,
+                        'calificacion_evidencia9' => (isset($evidencia9[$i])) ? $evidencia9[$i] : false,
+                        'calificacion_evidencia10' => (isset($evidencia10[$i])) ? $evidencia10[$i] : false,
+                        'promedio_mes' => (isset($actualizandoPromedio[$i])) ? $actualizandoPromedio[$i] : false,
                         'updated_at' => $fechaActual->format('Y-m-d H:i:s'),
                         'user_docente_id' => auth()->user()->id
 
@@ -801,7 +801,7 @@ class PrimariaCalificacionesController extends Controller
                         ]);
 
 
-                    // para actualizar faltas y retardos 
+                    // para actualizar faltas y retardos
                     if ($matNombre == "CONDUCTA") {
                         if ($primaria_falta == "") {
 
@@ -1156,15 +1156,19 @@ class PrimariaCalificacionesController extends Controller
                 }
 
 
-                // validamos si el registro se acaba de crear 
+                $falta_id = 0; //se hizo esta validacion para reiniciar la variable
+                // validamos si el registro se acaba de crear
                 if($primaria_falta == ""){
-                    $falta_id = $primaria_falta_new->id;
+                    if(isset($primaria_falta_new)){ //se hizo esta validacion para ver si existe la variable
+                        $falta_id = $primaria_falta_new->id; // si existe la guarda, se hizo por que en un caso Ciencias Naturales, $primaria_falta traia NULL, y por lo tanto la variable $primaria_falta_new no existe
+                    }
                 }else{
                     $falta_id = $primaria_falta->id;
                 }
 
-
-                DB::select("call procPrimariaActualizaTrimFaltas(".$falta_id.")");
+                if($falta_id > 0){ // validacion para por si no existe, no agarre un id guardado anteriormente en esa variable y entorpezca las calificaciones
+                    DB::select("call procPrimariaActualizaTrimFaltas(".$falta_id.")");
+                }
             }
 
             alert('Escuela Modelo', 'Las calificaciones se actualizaron con éxito', 'success')->showConfirmButton();
